@@ -14,6 +14,14 @@
 > 提示：部分网络环境无法直连 `github.io` 域名，若打不开请开启代理/VPN 后访问，
 > 或在网络不受限制的环境打开。本地始终可双击 `index.html` 离线使用。
 
+## 逐元素文档
+
+118 种元素各有独立起源文档（基本信息、来源构成、每条生成路径的反应式与核素变化链、
+参考资料），并配有索引页：
+
+- 文档目录：[`docs/elements/`](docs/elements/README.md)
+- 生成脚本：[`src/generate_element_docs.py`](src/generate_element_docs.py)
+
 ### 本机代理（Clash Verge）说明
 
 本机已安装并配置 Clash Verge（mihomo 内核，混合端口 `127.0.0.1:7897`）。
