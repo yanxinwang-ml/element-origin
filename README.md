@@ -14,6 +14,19 @@
 > 提示：部分网络环境无法直连 `github.io` 域名，若打不开请开启代理/VPN 后访问，
 > 或在网络不受限制的环境打开。本地始终可双击 `index.html` 离线使用。
 
+### 本机代理（Clash Verge）说明
+
+本机已安装并配置 Clash Verge（mihomo 内核，混合端口 `127.0.0.1:7897`）。
+若你的网络无法访问 GitHub 系站点（`github.com` / `github.io` 连接重置），
+按需开启系统代理即可：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\proxy-on.ps1    # 开启
+powershell -ExecutionPolicy Bypass -File scripts\proxy-off.ps1   # 关闭
+```
+
+也可以在 Clash Verge 主界面点“系统代理”开关，或在代理组（如 `JMS`）里手动选择节点。
+
 ## 打开方式
 
 直接双击 `index.html`（纯前端、无外部依赖，离线可用），或本地起一个静态服务：
