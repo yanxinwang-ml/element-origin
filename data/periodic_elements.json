@@ -1,0 +1,3509 @@
+var periodic_elements = 
+[
+    {
+        "number": 1,
+        "symbol": "H",
+        "chart_col": 1.0,
+        "chart_row": 1.0,
+        "chart_x": 0.0,
+        "source": [
+            "b"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "b",
+        "percent_str": "1.000",
+        "source_word": "Big Bang fusion"
+    },
+    {
+        "number": 2,
+        "symbol": "He",
+        "chart_col": 18.0,
+        "chart_row": 1.0,
+        "chart_x": 40.0,
+        "source": [
+            "y",
+            "g",
+            "b"
+        ],
+        "percent": [
+            "0.042",
+            "0.051",
+            "0.907"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 3,
+        "source_str": "y",
+        "percent_str": "0.042",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 2,
+        "symbol": "He",
+        "chart_col": 18.0,
+        "chart_row": 1.0,
+        "chart_x": 40.0,
+        "source": [
+            "y",
+            "g",
+            "b"
+        ],
+        "percent": [
+            "0.042",
+            "0.051",
+            "0.907"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 3,
+        "source_str": "g",
+        "percent_str": "0.051",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 2,
+        "symbol": "He",
+        "chart_col": 18.0,
+        "chart_row": 1.0,
+        "chart_x": 40.0,
+        "source": [
+            "y",
+            "g",
+            "b"
+        ],
+        "percent": [
+            "0.042",
+            "0.051",
+            "0.907"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 3,
+        "source_str": "b",
+        "percent_str": "0.907",
+        "source_word": "Big Bang fusion"
+    },
+    {
+        "number": 3,
+        "symbol": "Li",
+        "chart_col": 1.0,
+        "chart_row": 2.0,
+        "chart_x": 79.0,
+        "source": [
+            "j",
+            "b",
+            "y"
+        ],
+        "percent": [
+            "0.135",
+            "0.230",
+            "0.635"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 3,
+        "source_str": "j",
+        "percent_str": "0.135",
+        "source_word": "Cosmic ray fission"
+    },
+    {
+        "number": 3,
+        "symbol": "Li",
+        "chart_col": 1.0,
+        "chart_row": 2.0,
+        "chart_x": 79.0,
+        "source": [
+            "j",
+            "b",
+            "y"
+        ],
+        "percent": [
+            "0.135",
+            "0.230",
+            "0.635"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 3,
+        "source_str": "b",
+        "percent_str": "0.230",
+        "source_word": "Big Bang fusion"
+    },
+    {
+        "number": 3,
+        "symbol": "Li",
+        "chart_col": 1.0,
+        "chart_row": 2.0,
+        "chart_x": 79.0,
+        "source": [
+            "j",
+            "b",
+            "y"
+        ],
+        "percent": [
+            "0.135",
+            "0.230",
+            "0.635"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 3,
+        "source_str": "y",
+        "percent_str": "0.635",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 4,
+        "symbol": "Be",
+        "chart_col": 2.0,
+        "chart_row": 2.0,
+        "chart_x": 0.0,
+        "source": [
+            "j"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "j",
+        "percent_str": "1.000",
+        "source_word": "Cosmic ray fission"
+    },
+    {
+        "number": 5,
+        "symbol": "B",
+        "chart_col": 13.0,
+        "chart_row": 2.0,
+        "chart_x": 0.0,
+        "source": [
+            "j"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "j",
+        "percent_str": "1.000",
+        "source_word": "Cosmic ray fission"
+    },
+    {
+        "number": 6,
+        "symbol": "C",
+        "chart_col": 14.0,
+        "chart_row": 2.0,
+        "chart_x": 65.0,
+        "source": [
+            "g",
+            "y"
+        ],
+        "percent": [
+            "0.247",
+            "0.753"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.247",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 6,
+        "symbol": "C",
+        "chart_col": 14.0,
+        "chart_row": 2.0,
+        "chart_x": 65.0,
+        "source": [
+            "g",
+            "y"
+        ],
+        "percent": [
+            "0.247",
+            "0.753"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.753",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 7,
+        "symbol": "N",
+        "chart_col": 15.0,
+        "chart_row": 2.0,
+        "chart_x": 65.0,
+        "source": [
+            "g",
+            "y"
+        ],
+        "percent": [
+            "0.247",
+            "0.753"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.247",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 7,
+        "symbol": "N",
+        "chart_col": 15.0,
+        "chart_row": 2.0,
+        "chart_x": 65.0,
+        "source": [
+            "g",
+            "y"
+        ],
+        "percent": [
+            "0.247",
+            "0.753"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.753",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 8,
+        "symbol": "O",
+        "chart_col": 16.0,
+        "chart_row": 2.0,
+        "chart_x": 0.0,
+        "source": [
+            "g"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "g",
+        "percent_str": "1.000",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 9,
+        "symbol": "F",
+        "chart_col": 17.0,
+        "chart_row": 2.0,
+        "chart_x": 0.0,
+        "source": [
+            "g"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "g",
+        "percent_str": "1.000",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 10,
+        "symbol": "Ne",
+        "chart_col": 18.0,
+        "chart_row": 2.0,
+        "chart_x": 0.0,
+        "source": [
+            "g"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "g",
+        "percent_str": "1.000",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 11,
+        "symbol": "Na",
+        "chart_col": 1.0,
+        "chart_row": 3.0,
+        "chart_x": 0.0,
+        "source": [
+            "g"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "g",
+        "percent_str": "1.000",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 12,
+        "symbol": "Mg",
+        "chart_col": 2.0,
+        "chart_row": 3.0,
+        "chart_x": 173.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.992",
+            "0.008"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.992",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 12,
+        "symbol": "Mg",
+        "chart_col": 2.0,
+        "chart_row": 3.0,
+        "chart_x": 173.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.992",
+            "0.008"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.008",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 13,
+        "symbol": "Al",
+        "chart_col": 13.0,
+        "chart_row": 3.0,
+        "chart_x": 177.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.996",
+            "0.004"
+        ],
+        "format_percent": "%.1f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.996",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 13,
+        "symbol": "Al",
+        "chart_col": 13.0,
+        "chart_row": 3.0,
+        "chart_x": 177.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.996",
+            "0.004"
+        ],
+        "format_percent": "%.1f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.004",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 14,
+        "symbol": "Si",
+        "chart_col": 14.0,
+        "chart_row": 3.0,
+        "chart_x": 114.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.705",
+            "0.295"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.705",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 14,
+        "symbol": "Si",
+        "chart_col": 14.0,
+        "chart_row": 3.0,
+        "chart_x": 114.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.705",
+            "0.295"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.295",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 15,
+        "symbol": "P",
+        "chart_col": 15.0,
+        "chart_row": 3.0,
+        "chart_x": 163.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.972",
+            "0.028"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.972",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 15,
+        "symbol": "P",
+        "chart_col": 15.0,
+        "chart_row": 3.0,
+        "chart_x": 163.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.972",
+            "0.028"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.028",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 16,
+        "symbol": "S",
+        "chart_col": 16.0,
+        "chart_row": 3.0,
+        "chart_x": 100.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.578",
+            "0.422"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.578",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 16,
+        "symbol": "S",
+        "chart_col": 16.0,
+        "chart_row": 3.0,
+        "chart_x": 100.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.578",
+            "0.422"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.422",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 17,
+        "symbol": "Cl",
+        "chart_col": 17.0,
+        "chart_row": 3.0,
+        "chart_x": 133.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.842",
+            "0.158"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.842",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 17,
+        "symbol": "Cl",
+        "chart_col": 17.0,
+        "chart_row": 3.0,
+        "chart_x": 133.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.842",
+            "0.158"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.158",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 18,
+        "symbol": "Ar",
+        "chart_col": 18.0,
+        "chart_row": 3.0,
+        "chart_x": 98.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.558",
+            "0.442"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.558",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 18,
+        "symbol": "Ar",
+        "chart_col": 18.0,
+        "chart_row": 3.0,
+        "chart_x": 98.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.558",
+            "0.442"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.442",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 19,
+        "symbol": "K",
+        "chart_col": 1.0,
+        "chart_row": 4.0,
+        "chart_x": 130.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.823",
+            "0.177"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.823",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 19,
+        "symbol": "K",
+        "chart_col": 1.0,
+        "chart_row": 4.0,
+        "chart_x": 130.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.823",
+            "0.177"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.177",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 20,
+        "symbol": "Ca",
+        "chart_col": 2.0,
+        "chart_row": 4.0,
+        "chart_x": 93.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.505",
+            "0.495"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.505",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 20,
+        "symbol": "Ca",
+        "chart_col": 2.0,
+        "chart_row": 4.0,
+        "chart_x": 93.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.505",
+            "0.495"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.495",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 21,
+        "symbol": "Sc",
+        "chart_col": 3.0,
+        "chart_row": 4.0,
+        "chart_x": 130.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.823",
+            "0.177"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.823",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 21,
+        "symbol": "Sc",
+        "chart_col": 3.0,
+        "chart_row": 4.0,
+        "chart_x": 130.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.823",
+            "0.177"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.177",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 22,
+        "symbol": "Ti",
+        "chart_col": 4.0,
+        "chart_row": 4.0,
+        "chart_x": 77.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.346",
+            "0.654"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.346",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 22,
+        "symbol": "Ti",
+        "chart_col": 4.0,
+        "chart_row": 4.0,
+        "chart_x": 77.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.346",
+            "0.654"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.654",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 23,
+        "symbol": "V",
+        "chart_col": 5.0,
+        "chart_row": 4.0,
+        "chart_x": 65.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.247",
+            "0.753"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.247",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 23,
+        "symbol": "V",
+        "chart_col": 5.0,
+        "chart_row": 4.0,
+        "chart_x": 65.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.247",
+            "0.753"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.753",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 24,
+        "symbol": "Cr",
+        "chart_col": 6.0,
+        "chart_row": 4.0,
+        "chart_x": 63.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.232",
+            "0.768"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.232",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 24,
+        "symbol": "Cr",
+        "chart_col": 6.0,
+        "chart_row": 4.0,
+        "chart_x": 63.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.232",
+            "0.768"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.768",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 25,
+        "symbol": "Mn",
+        "chart_col": 7.0,
+        "chart_row": 4.0,
+        "chart_x": 53.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.164",
+            "0.836"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.164",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 25,
+        "symbol": "Mn",
+        "chart_col": 7.0,
+        "chart_row": 4.0,
+        "chart_x": 53.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.164",
+            "0.836"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.836",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 26,
+        "symbol": "Fe",
+        "chart_col": 8.0,
+        "chart_row": 4.0,
+        "chart_x": 78.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.356",
+            "0.644"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.356",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 26,
+        "symbol": "Fe",
+        "chart_col": 8.0,
+        "chart_row": 4.0,
+        "chart_x": 78.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.356",
+            "0.644"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.644",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 27,
+        "symbol": "Co",
+        "chart_col": 9.0,
+        "chart_row": 4.0,
+        "chart_x": 75.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.329",
+            "0.671"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.329",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 27,
+        "symbol": "Co",
+        "chart_col": 9.0,
+        "chart_row": 4.0,
+        "chart_x": 75.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.329",
+            "0.671"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.671",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 28,
+        "symbol": "Ni",
+        "chart_col": 10.0,
+        "chart_row": 4.0,
+        "chart_x": 72.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.303",
+            "0.697"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.303",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 28,
+        "symbol": "Ni",
+        "chart_col": 10.0,
+        "chart_row": 4.0,
+        "chart_x": 72.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.303",
+            "0.697"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.697",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 29,
+        "symbol": "Cu",
+        "chart_col": 11.0,
+        "chart_row": 4.0,
+        "chart_x": 85.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.422",
+            "0.578"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.422",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 29,
+        "symbol": "Cu",
+        "chart_col": 11.0,
+        "chart_row": 4.0,
+        "chart_x": 85.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.422",
+            "0.578"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.578",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 30,
+        "symbol": "Zn",
+        "chart_col": 12.0,
+        "chart_row": 4.0,
+        "chart_x": 89.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.463",
+            "0.537"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.463",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 30,
+        "symbol": "Zn",
+        "chart_col": 12.0,
+        "chart_row": 4.0,
+        "chart_x": 89.0,
+        "source": [
+            "g",
+            "c"
+        ],
+        "percent": [
+            "0.463",
+            "0.537"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "c",
+        "percent_str": "0.537",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 31,
+        "symbol": "Ga",
+        "chart_col": 13.0,
+        "chart_row": 4.0,
+        "chart_x": 0.0,
+        "source": [
+            "g"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "g",
+        "percent_str": "1.000",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 32,
+        "symbol": "Ge",
+        "chart_col": 14.0,
+        "chart_row": 4.0,
+        "chart_x": 0.0,
+        "source": [
+            "g"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "g",
+        "percent_str": "1.000",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 33,
+        "symbol": "As",
+        "chart_col": 15.0,
+        "chart_row": 4.0,
+        "chart_x": 0.0,
+        "source": [
+            "g"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "g",
+        "percent_str": "1.000",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 34,
+        "symbol": "Se",
+        "chart_col": 16.0,
+        "chart_row": 4.0,
+        "chart_x": 0.0,
+        "source": [
+            "g"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "g",
+        "percent_str": "1.000",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 35,
+        "symbol": "Br",
+        "chart_col": 17.0,
+        "chart_row": 4.0,
+        "chart_x": 0.0,
+        "source": [
+            "g"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "g",
+        "percent_str": "1.000",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 36,
+        "symbol": "Kr",
+        "chart_col": 18.0,
+        "chart_row": 4.0,
+        "chart_x": 0.0,
+        "source": [
+            "g"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "g",
+        "percent_str": "1.000",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 37,
+        "symbol": "Rb",
+        "chart_col": 1.0,
+        "chart_row": 5.0,
+        "chart_x": 0.0,
+        "source": [
+            "g"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "g",
+        "percent_str": "1.000",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 38,
+        "symbol": "Sr",
+        "chart_col": 2.0,
+        "chart_row": 5.0,
+        "chart_x": 47.0,
+        "source": [
+            "g",
+            "y"
+        ],
+        "percent": [
+            "0.129",
+            "0.871"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.129",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 38,
+        "symbol": "Sr",
+        "chart_col": 2.0,
+        "chart_row": 5.0,
+        "chart_x": 47.0,
+        "source": [
+            "g",
+            "y"
+        ],
+        "percent": [
+            "0.129",
+            "0.871"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.871",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 39,
+        "symbol": "Y",
+        "chart_col": 3.0,
+        "chart_row": 5.0,
+        "chart_x": 37.0,
+        "source": [
+            "g",
+            "y"
+        ],
+        "percent": [
+            "0.080",
+            "0.920"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.080",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 39,
+        "symbol": "Y",
+        "chart_col": 3.0,
+        "chart_row": 5.0,
+        "chart_x": 37.0,
+        "source": [
+            "g",
+            "y"
+        ],
+        "percent": [
+            "0.080",
+            "0.920"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.920",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 40,
+        "symbol": "Zr",
+        "chart_col": 4.0,
+        "chart_row": 5.0,
+        "chart_x": 53.0,
+        "source": [
+            "g",
+            "y"
+        ],
+        "percent": [
+            "0.164",
+            "0.836"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "g",
+        "percent_str": "0.164",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 40,
+        "symbol": "Zr",
+        "chart_col": 4.0,
+        "chart_row": 5.0,
+        "chart_x": 53.0,
+        "source": [
+            "g",
+            "y"
+        ],
+        "percent": [
+            "0.164",
+            "0.836"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.836",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 41,
+        "symbol": "Nb",
+        "chart_col": 5.0,
+        "chart_row": 5.0,
+        "chart_x": 48.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.135",
+            "0.865"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.135",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 41,
+        "symbol": "Nb",
+        "chart_col": 5.0,
+        "chart_row": 5.0,
+        "chart_x": 48.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.135",
+            "0.865"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.865",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 42,
+        "symbol": "Mo",
+        "chart_col": 6.0,
+        "chart_row": 5.0,
+        "chart_x": 80.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.374",
+            "0.626"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.374",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 42,
+        "symbol": "Mo",
+        "chart_col": 6.0,
+        "chart_row": 5.0,
+        "chart_x": 80.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.374",
+            "0.626"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.626",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 43,
+        "symbol": "Tc",
+        "chart_col": 7.0,
+        "chart_row": 5.0,
+        "chart_x": 0.0,
+        "source": [
+            "z"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "z",
+        "percent_str": "1.000",
+        "source_word": "Human synthesis"
+    },
+    {
+        "number": 44,
+        "symbol": "Ru",
+        "chart_col": 8.0,
+        "chart_row": 5.0,
+        "chart_x": 111.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.680",
+            "0.320"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.680",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 44,
+        "symbol": "Ru",
+        "chart_col": 8.0,
+        "chart_row": 5.0,
+        "chart_x": 111.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.680",
+            "0.320"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.320",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 45,
+        "symbol": "Rh",
+        "chart_col": 9.0,
+        "chart_row": 5.0,
+        "chart_x": 137.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.865",
+            "0.135"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.865",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 45,
+        "symbol": "Rh",
+        "chart_col": 9.0,
+        "chart_row": 5.0,
+        "chart_x": 137.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.865",
+            "0.135"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.135",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 46,
+        "symbol": "Pd",
+        "chart_col": 10.0,
+        "chart_row": 5.0,
+        "chart_x": 97.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.547",
+            "0.453"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.547",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 46,
+        "symbol": "Pd",
+        "chart_col": 10.0,
+        "chart_row": 5.0,
+        "chart_x": 97.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.547",
+            "0.453"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.453",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 47,
+        "symbol": "Ag",
+        "chart_col": 11.0,
+        "chart_row": 5.0,
+        "chart_x": 128.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.810",
+            "0.190"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.810",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 47,
+        "symbol": "Ag",
+        "chart_col": 11.0,
+        "chart_row": 5.0,
+        "chart_x": 128.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.810",
+            "0.190"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.190",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 48,
+        "symbol": "Cd",
+        "chart_col": 12.0,
+        "chart_row": 5.0,
+        "chart_x": 91.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.484",
+            "0.516"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.484",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 48,
+        "symbol": "Cd",
+        "chart_col": 12.0,
+        "chart_row": 5.0,
+        "chart_x": 91.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.484",
+            "0.516"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.516",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 49,
+        "symbol": "In",
+        "chart_col": 13.0,
+        "chart_row": 5.0,
+        "chart_x": 107.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.644",
+            "0.356"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.644",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 49,
+        "symbol": "In",
+        "chart_col": 13.0,
+        "chart_row": 5.0,
+        "chart_x": 107.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.644",
+            "0.356"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.356",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 50,
+        "symbol": "Sn",
+        "chart_col": 14.0,
+        "chart_row": 5.0,
+        "chart_x": 73.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.311",
+            "0.689"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.311",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 50,
+        "symbol": "Sn",
+        "chart_col": 14.0,
+        "chart_row": 5.0,
+        "chart_x": 73.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.311",
+            "0.689"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.689",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 51,
+        "symbol": "Sb",
+        "chart_col": 15.0,
+        "chart_row": 5.0,
+        "chart_x": 119.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.745",
+            "0.255"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.745",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 51,
+        "symbol": "Sb",
+        "chart_col": 15.0,
+        "chart_row": 5.0,
+        "chart_x": 119.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.745",
+            "0.255"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.255",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 52,
+        "symbol": "Te",
+        "chart_col": 16.0,
+        "chart_row": 5.0,
+        "chart_x": 86.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.432",
+            "0.568"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.432",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 52,
+        "symbol": "Te",
+        "chart_col": 16.0,
+        "chart_row": 5.0,
+        "chart_x": 86.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.432",
+            "0.568"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.568",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 53,
+        "symbol": "I",
+        "chart_col": 17.0,
+        "chart_row": 5.0,
+        "chart_x": 157.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.954",
+            "0.046"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.954",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 53,
+        "symbol": "I",
+        "chart_col": 17.0,
+        "chart_row": 5.0,
+        "chart_x": 157.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.954",
+            "0.046"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.046",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 54,
+        "symbol": "Xe",
+        "chart_col": 18.0,
+        "chart_row": 5.0,
+        "chart_x": 131.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.830",
+            "0.170"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.830",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 54,
+        "symbol": "Xe",
+        "chart_col": 18.0,
+        "chart_row": 5.0,
+        "chart_x": 131.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.830",
+            "0.170"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.170",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 55,
+        "symbol": "Cs",
+        "chart_col": 1.0,
+        "chart_row": 6.0,
+        "chart_x": 134.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.848",
+            "0.152"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.848",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 55,
+        "symbol": "Cs",
+        "chart_col": 1.0,
+        "chart_row": 6.0,
+        "chart_x": 134.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.848",
+            "0.152"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.152",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 56,
+        "symbol": "Ba",
+        "chart_col": 2.0,
+        "chart_row": 6.0,
+        "chart_x": 56.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.183",
+            "0.817"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.183",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 56,
+        "symbol": "Ba",
+        "chart_col": 2.0,
+        "chart_row": 6.0,
+        "chart_x": 56.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.183",
+            "0.817"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.817",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 57,
+        "symbol": "La",
+        "chart_col": 4.0,
+        "chart_row": 7.5,
+        "chart_x": 81.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.383",
+            "0.617"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.383",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 57,
+        "symbol": "La",
+        "chart_col": 4.0,
+        "chart_row": 7.5,
+        "chart_x": 81.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.383",
+            "0.617"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.617",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 58,
+        "symbol": "Ce",
+        "chart_col": 5.0,
+        "chart_row": 7.5,
+        "chart_x": 64.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.239",
+            "0.761"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.239",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 58,
+        "symbol": "Ce",
+        "chart_col": 5.0,
+        "chart_row": 7.5,
+        "chart_x": 64.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.239",
+            "0.761"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.761",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 59,
+        "symbol": "Pr",
+        "chart_col": 6.0,
+        "chart_row": 7.5,
+        "chart_x": 94.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.516",
+            "0.484"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.516",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 59,
+        "symbol": "Pr",
+        "chart_col": 6.0,
+        "chart_row": 7.5,
+        "chart_x": 94.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.516",
+            "0.484"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.484",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 60,
+        "symbol": "Nd",
+        "chart_col": 7.0,
+        "chart_row": 7.5,
+        "chart_x": 83.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.403",
+            "0.597"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.403",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 60,
+        "symbol": "Nd",
+        "chart_col": 7.0,
+        "chart_row": 7.5,
+        "chart_x": 83.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.403",
+            "0.597"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.597",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 61,
+        "symbol": "Pm",
+        "chart_col": 8.0,
+        "chart_row": 7.5,
+        "chart_x": 0.0,
+        "source": [
+            "z"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "z",
+        "percent_str": "1.000",
+        "source_word": "Human synthesis"
+    },
+    {
+        "number": 62,
+        "symbol": "Sm",
+        "chart_col": 9.0,
+        "chart_row": 7.5,
+        "chart_x": 114.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.705",
+            "0.295"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.705",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 62,
+        "symbol": "Sm",
+        "chart_col": 9.0,
+        "chart_row": 7.5,
+        "chart_x": 114.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.705",
+            "0.295"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.295",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 63,
+        "symbol": "Eu",
+        "chart_col": 10.0,
+        "chart_row": 7.5,
+        "chart_x": 155.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.947",
+            "0.053"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.947",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 63,
+        "symbol": "Eu",
+        "chart_col": 10.0,
+        "chart_row": 7.5,
+        "chart_x": 155.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.947",
+            "0.053"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.053",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 64,
+        "symbol": "Gd",
+        "chart_col": 11.0,
+        "chart_row": 7.5,
+        "chart_x": 135.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.854",
+            "0.146"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.854",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 64,
+        "symbol": "Gd",
+        "chart_col": 11.0,
+        "chart_row": 7.5,
+        "chart_x": 135.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.854",
+            "0.146"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.146",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 65,
+        "symbol": "Tb",
+        "chart_col": 12.0,
+        "chart_row": 7.5,
+        "chart_x": 151.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.932",
+            "0.068"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.932",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 65,
+        "symbol": "Tb",
+        "chart_col": 12.0,
+        "chart_row": 7.5,
+        "chart_x": 151.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.932",
+            "0.068"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.068",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 66,
+        "symbol": "Dy",
+        "chart_col": 13.0,
+        "chart_row": 7.5,
+        "chart_x": 136.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.860",
+            "0.140"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.860",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 66,
+        "symbol": "Dy",
+        "chart_col": 13.0,
+        "chart_row": 7.5,
+        "chart_x": 136.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.860",
+            "0.140"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.140",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 67,
+        "symbol": "Ho",
+        "chart_col": 14.0,
+        "chart_row": 7.5,
+        "chart_x": 150.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.928",
+            "0.072"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.928",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 67,
+        "symbol": "Ho",
+        "chart_col": 14.0,
+        "chart_row": 7.5,
+        "chart_x": 150.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.928",
+            "0.072"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.072",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 68,
+        "symbol": "Er",
+        "chart_col": 15.0,
+        "chart_row": 7.5,
+        "chart_x": 132.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.836",
+            "0.164"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.836",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 68,
+        "symbol": "Er",
+        "chart_col": 15.0,
+        "chart_row": 7.5,
+        "chart_x": 132.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.836",
+            "0.164"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.164",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 69,
+        "symbol": "Tm",
+        "chart_col": 16.0,
+        "chart_row": 7.5,
+        "chart_x": 139.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.876",
+            "0.124"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.876",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 69,
+        "symbol": "Tm",
+        "chart_col": 16.0,
+        "chart_row": 7.5,
+        "chart_x": 139.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.876",
+            "0.124"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.124",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 70,
+        "symbol": "Yb",
+        "chart_col": 17.0,
+        "chart_row": 7.5,
+        "chart_x": 111.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.680",
+            "0.320"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.680",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 70,
+        "symbol": "Yb",
+        "chart_col": 17.0,
+        "chart_row": 7.5,
+        "chart_x": 111.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.680",
+            "0.320"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.320",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 71,
+        "symbol": "Lu",
+        "chart_col": 18.0,
+        "chart_row": 7.5,
+        "chart_x": 127.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.803",
+            "0.197"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.803",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 71,
+        "symbol": "Lu",
+        "chart_col": 18.0,
+        "chart_row": 7.5,
+        "chart_x": 127.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.803",
+            "0.197"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.197",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 72,
+        "symbol": "Hf",
+        "chart_col": 4.0,
+        "chart_row": 6.0,
+        "chart_x": 88.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.453",
+            "0.547"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.453",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 72,
+        "symbol": "Hf",
+        "chart_col": 4.0,
+        "chart_row": 6.0,
+        "chart_x": 88.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.453",
+            "0.547"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.547",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 73,
+        "symbol": "Ta",
+        "chart_col": 5.0,
+        "chart_row": 6.0,
+        "chart_x": 101.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.588",
+            "0.412"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.588",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 73,
+        "symbol": "Ta",
+        "chart_col": 5.0,
+        "chart_row": 6.0,
+        "chart_x": 101.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.588",
+            "0.412"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.412",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 74,
+        "symbol": "W",
+        "chart_col": 6.0,
+        "chart_row": 6.0,
+        "chart_x": 86.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.432",
+            "0.568"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.432",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 74,
+        "symbol": "W",
+        "chart_col": 6.0,
+        "chart_row": 6.0,
+        "chart_x": 86.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.432",
+            "0.568"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.568",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 75,
+        "symbol": "Re",
+        "chart_col": 7.0,
+        "chart_row": 6.0,
+        "chart_x": 147.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.916",
+            "0.084"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.916",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 75,
+        "symbol": "Re",
+        "chart_col": 7.0,
+        "chart_row": 6.0,
+        "chart_x": 147.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.916",
+            "0.084"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.084",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 76,
+        "symbol": "Os",
+        "chart_col": 8.0,
+        "chart_row": 6.0,
+        "chart_x": 144.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.902",
+            "0.098"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.902",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 76,
+        "symbol": "Os",
+        "chart_col": 8.0,
+        "chart_row": 6.0,
+        "chart_x": 144.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.902",
+            "0.098"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.098",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 77,
+        "symbol": "Ir",
+        "chart_col": 9.0,
+        "chart_row": 6.0,
+        "chart_x": 169.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.985",
+            "0.015"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.985",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 77,
+        "symbol": "Ir",
+        "chart_col": 9.0,
+        "chart_row": 6.0,
+        "chart_x": 169.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.985",
+            "0.015"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.015",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 78,
+        "symbol": "Pt",
+        "chart_col": 10.0,
+        "chart_row": 6.0,
+        "chart_x": 155.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.947",
+            "0.053"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.947",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 78,
+        "symbol": "Pt",
+        "chart_col": 10.0,
+        "chart_row": 6.0,
+        "chart_x": 155.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.947",
+            "0.053"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.053",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 79,
+        "symbol": "Au",
+        "chart_col": 11.0,
+        "chart_row": 6.0,
+        "chart_x": 153.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.940",
+            "0.060"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.940",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 79,
+        "symbol": "Au",
+        "chart_col": 11.0,
+        "chart_row": 6.0,
+        "chart_x": 153.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.940",
+            "0.060"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.060",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 80,
+        "symbol": "Hg",
+        "chart_col": 12.0,
+        "chart_row": 6.0,
+        "chart_x": 81.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.383",
+            "0.617"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.383",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 80,
+        "symbol": "Hg",
+        "chart_col": 12.0,
+        "chart_row": 6.0,
+        "chart_x": 81.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.383",
+            "0.617"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.617",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 81,
+        "symbol": "Tl",
+        "chart_col": 13.0,
+        "chart_row": 6.0,
+        "chart_x": 63.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.232",
+            "0.768"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.232",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 81,
+        "symbol": "Tl",
+        "chart_col": 13.0,
+        "chart_row": 6.0,
+        "chart_x": 63.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.232",
+            "0.768"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.768",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 82,
+        "symbol": "Pb",
+        "chart_col": 14.0,
+        "chart_row": 6.0,
+        "chart_x": 95.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.527",
+            "0.473"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.527",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 82,
+        "symbol": "Pb",
+        "chart_col": 14.0,
+        "chart_row": 6.0,
+        "chart_x": 95.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.527",
+            "0.473"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.473",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 83,
+        "symbol": "Bi",
+        "chart_col": 15.0,
+        "chart_row": 6.0,
+        "chart_x": 176.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.995",
+            "0.005"
+        ],
+        "format_percent": "%.1f",
+        "source_count": 2,
+        "source_str": "o",
+        "percent_str": "0.995",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 83,
+        "symbol": "Bi",
+        "chart_col": 15.0,
+        "chart_row": 6.0,
+        "chart_x": 176.0,
+        "source": [
+            "o",
+            "y"
+        ],
+        "percent": [
+            "0.995",
+            "0.005"
+        ],
+        "format_percent": "%.1f",
+        "source_count": 2,
+        "source_str": "y",
+        "percent_str": "0.005",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 84,
+        "symbol": "Po",
+        "chart_col": 16.0,
+        "chart_row": 6.0,
+        "chart_x": 0.0,
+        "source": [
+            "o"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "o",
+        "percent_str": "1.000",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 85,
+        "symbol": "At",
+        "chart_col": 17.0,
+        "chart_row": 6.0,
+        "chart_x": 0.0,
+        "source": [
+            "o"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "o",
+        "percent_str": "1.000",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 86,
+        "symbol": "Rn",
+        "chart_col": 18.0,
+        "chart_row": 6.0,
+        "chart_x": 0.0,
+        "source": [
+            "o"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "o",
+        "percent_str": "1.000",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 87,
+        "symbol": "Fr",
+        "chart_col": 1.0,
+        "chart_row": 7.0,
+        "chart_x": 0.0,
+        "source": [
+            "o"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "o",
+        "percent_str": "1.000",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 88,
+        "symbol": "Ra",
+        "chart_col": 2.0,
+        "chart_row": 7.0,
+        "chart_x": 0.0,
+        "source": [
+            "o"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "o",
+        "percent_str": "1.000",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 89,
+        "symbol": "Ac",
+        "chart_col": 4.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "o"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "o",
+        "percent_str": "1.000",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 90,
+        "symbol": "Th",
+        "chart_col": 5.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "o"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "o",
+        "percent_str": "1.000",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 91,
+        "symbol": "Pa",
+        "chart_col": 6.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "o"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "o",
+        "percent_str": "1.000",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 92,
+        "symbol": "U",
+        "chart_col": 7.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "o"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "o",
+        "percent_str": "1.000",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 93,
+        "symbol": "Np",
+        "chart_col": 8.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "o"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "o",
+        "percent_str": "1.000",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 94,
+        "symbol": "Pu",
+        "chart_col": 9.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "o"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "o",
+        "percent_str": "1.000",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 95,
+        "symbol": "Am",
+        "chart_col": 10.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "z"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "z",
+        "percent_str": "1.000",
+        "source_word": "Human synthesis"
+    },
+    {
+        "number": 96,
+        "symbol": "Cm",
+        "chart_col": 11.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "z"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "z",
+        "percent_str": "1.000",
+        "source_word": "Human synthesis"
+    },
+    {
+        "number": 97,
+        "symbol": "Bk",
+        "chart_col": 12.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "z"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "z",
+        "percent_str": "1.000",
+        "source_word": "Human synthesis"
+    },
+    {
+        "number": 98,
+        "symbol": "Cf",
+        "chart_col": 13.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "z"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "z",
+        "percent_str": "1.000",
+        "source_word": "Human synthesis"
+    },
+    {
+        "number": 99,
+        "symbol": "Es",
+        "chart_col": 14.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "z"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "z",
+        "percent_str": "1.000",
+        "source_word": "Human synthesis"
+    },
+    {
+        "number": 100,
+        "symbol": "Fm",
+        "chart_col": 15.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "z"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "z",
+        "percent_str": "1.000",
+        "source_word": "Human synthesis"
+    },
+    {
+        "number": 101,
+        "symbol": "Md",
+        "chart_col": 16.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "z"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "z",
+        "percent_str": "1.000",
+        "source_word": "Human synthesis"
+    },
+    {
+        "number": 102,
+        "symbol": "No",
+        "chart_col": 17.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "z"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "z",
+        "percent_str": "1.000",
+        "source_word": "Human synthesis"
+    },
+    {
+        "number": 103,
+        "symbol": "Lr",
+        "chart_col": 18.0,
+        "chart_row": 8.5,
+        "chart_x": 0.0,
+        "source": [
+            "z"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "z",
+        "percent_str": "1.000",
+        "source_word": "Human synthesis"
+    },
+    {
+        "number": 104,
+        "symbol": "",
+        "chart_col": 3.25,
+        "chart_row": 0.9,
+        "chart_x": 0.0,
+        "source": [
+            "b"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "b",
+        "percent_str": "1.000",
+        "source_word": "Big Bang fusion"
+    },
+    {
+        "number": 105,
+        "symbol": "",
+        "chart_col": 3.25,
+        "chart_row": 2.4,
+        "chart_x": 0.0,
+        "source": [
+            "j"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "j",
+        "percent_str": "1.000",
+        "source_word": "Cosmic ray fission"
+    },
+    {
+        "number": 106,
+        "symbol": "",
+        "chart_col": 5.8,
+        "chart_row": 0.9,
+        "chart_x": 0.0,
+        "source": [
+            "y"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "y",
+        "percent_str": "1.000",
+        "source_word": "Dying low-mass stars"
+    },
+    {
+        "number": 107,
+        "symbol": "",
+        "chart_col": 5.8,
+        "chart_row": 2.4,
+        "chart_x": 0.0,
+        "source": [
+            "o"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "o",
+        "percent_str": "1.000",
+        "source_word": "Merging neutron stars"
+    },
+    {
+        "number": 108,
+        "symbol": "",
+        "chart_col": 8.7,
+        "chart_row": 0.9,
+        "chart_x": 0.0,
+        "source": [
+            "g"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "g",
+        "percent_str": "1.000",
+        "source_word": "Exploding massive stars"
+    },
+    {
+        "number": 109,
+        "symbol": "",
+        "chart_col": 8.7,
+        "chart_row": 2.4,
+        "chart_x": 0.0,
+        "source": [
+            "c"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "c",
+        "percent_str": "1.000",
+        "source_word": "Exploding white dwarfs"
+    },
+    {
+        "number": 110,
+        "symbol": "",
+        "chart_col": 11.7,
+        "chart_row": 0.9,
+        "chart_x": 0.0,
+        "source": [
+            "z"
+        ],
+        "percent": [
+            "1.000"
+        ],
+        "format_percent": "%.0f",
+        "source_count": 1,
+        "source_str": "z",
+        "percent_str": "1.000",
+        "source_word": "Human synthesis"
+    }
+]

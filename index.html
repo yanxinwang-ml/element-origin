@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>元素起源 · 宇宙元素生成示意图</title>
+<style>
+  :root {
+    --bg: #0b1220;
+    --panel: rgba(255,255,255,0.045);
+    --line: rgba(255,255,255,0.10);
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --accent: #60a5fa;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: radial-gradient(1200px 700px at 50% -10%, #16233d 0%, var(--bg) 60%);
+    color: var(--text);
+    font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+    min-height: 100vh;
+  }
+  header {
+    padding: 18px 22px 8px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(11,18,32,0.7);
+    backdrop-filter: blur(4px);
+  }
+  h1 { margin: 0; font-size: 22px; letter-spacing: 1px; }
+  .subtitle { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+  .source { margin: 6px 0 0; color: #64748b; font-size: 11px; line-height: 1.5; }
+
+  /* ---- timeline ---- */
+  #timeline-panel {
+    padding: 14px 22px 10px;
+    background: rgba(11,18,32,0.55);
+    border-bottom: 1px solid var(--line);
+  }
+  #time-display {
+    display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  #era-label {
+    font-size: 16px; font-weight: 600; color: var(--accent);
+  }
+  #time-value { font-size: 14px; color: var(--text); font-variant-numeric: tabular-nums; }
+  #lit-counter { margin-left: auto; font-size: 12px; color: var(--muted); }
+  #timeline-bar {
+    position: relative; height: 52px;
+    background: linear-gradient(90deg, rgba(59,130,246,0.18), rgba(34,197,94,0.18));
+    border: 1px solid var(--line); border-radius: 8px;
+  }
+  .marker {
+    position: absolute; top: 0; bottom: 0; width: 1px; background: rgba(255,255,255,0.35);
+  }
+  .marker .dot { position: absolute; top: 4px; left: -3px; width: 7px; height: 7px; border-radius: 50%; background: #e2e8f0; }
+  .marker span {
+    position: absolute; top: 16px; font-size: 10px; line-height: 1.25; color: var(--muted);
+    white-space: nowrap; transform: translateX(-50%);
+  }
+  .marker span b { display: block; color: #cbd5e1; font-weight: 600; }
+  .marker.edge-left span { transform: none; }
+  .marker.edge-right span { transform: translateX(-100%); }
+  .marker.passed .dot { background: var(--accent); box-shadow: 0 0 6px var(--accent); }
+  #playhead {
+    position: absolute; top: -3px; bottom: -3px; width: 2px; background: #fff;
+    box-shadow: 0 0 8px #fff; border-radius: 2px; left: 0%; z-index: 5;
+  }
+  #controls { display: flex; align-items: center; gap: 12px; margin-top: 10px; }
+  #controls button, #controls select {
+    background: var(--panel); color: var(--text); border: 1px solid var(--line);
+    border-radius: 6px; padding: 5px 12px; font-size: 13px; cursor: pointer;
+  }
+  #controls button:hover { background: rgba(255,255,255,0.10); }
+  #slider { flex: 1; accent-color: var(--accent); height: 6px; cursor: pointer; }
+
+  /* ---- layout ---- */
+  main {
+    display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 18px;
+    padding: 18px 22px 26px; align-items: start;
+  }
+  #legend { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--panel); border: 1px solid var(--line); border-radius: 999px;
+    padding: 4px 10px; font-size: 12px; cursor: pointer; user-select: none;
+  }
+  .chip .swatch { width: 10px; height: 10px; border-radius: 3px; }
+  .chip.active { outline: 2px solid var(--accent); }
+  .chip .count { color: var(--muted); font-size: 10px; }
+
+  #periodic-table {
+    display: grid;
+    grid-template-columns: 30px repeat(18, minmax(0, 1fr));
+    grid-auto-rows: minmax(38px, auto);
+    gap: 3px;
+  }
+  .row-label {
+    display: flex; align-items: center; justify-content: flex-end;
+    font-size: 10px; color: var(--muted); padding-right: 4px; white-space: nowrap;
+  }
+  .cell {
+    position: relative; border-radius: 5px; cursor: pointer;
+    background: rgba(148,163,184,0.07); border: 1px solid rgba(255,255,255,0.05);
+    padding: 2px 3px; display: flex; flex-direction: column; justify-content: center;
+    transition: transform 0.15s ease, box-shadow 0.3s ease, background 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+  }
+  .cell:hover { transform: scale(1.06); z-index: 3; }
+  .cell .num { font-size: 8px; color: rgba(255,255,255,0.55); line-height: 1; }
+  .cell .sym { font-size: 15px; font-weight: 700; line-height: 1.1; letter-spacing: 0.5px; }
+  .cell .cnn { font-size: 8px; color: rgba(255,255,255,0.6); line-height: 1; }
+  .cell.lit {
+    background: var(--cell-color);
+    border-color: rgba(255,255,255,0.35);
+    box-shadow: 0 0 10px color-mix(in srgb, var(--cell-color) 55%, transparent);
+  }
+  .cell.dim { opacity: 0.12; }
+  .cell.selected { outline: 2px solid #fff; outline-offset: 1px; }
+  .hint { color: var(--muted); font-size: 11px; margin: 10px 0 0; }
+
+  /* ---- detail panel ---- */
+  #detail {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 18px; position: sticky; top: 16px; min-height: 320px;
+  }
+  #detail-empty { color: var(--muted); font-size: 13px; text-align: center; margin-top: 100px; }
+  .detail-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .detail-num { font-size: 13px; color: var(--muted); }
+  .detail-symbol { font-size: 40px; font-weight: 800; line-height: 1; }
+  .detail-names .cn { font-size: 20px; font-weight: 600; display: block; }
+  .detail-names .en { font-size: 12px; color: var(--muted); }
+  .detail-epoch {
+    font-size: 12px; color: #cbd5e1; background: rgba(255,255,255,0.05);
+    border-left: 3px solid var(--dot-color); padding: 6px 10px; border-radius: 0 6px 6px 0;
+    margin-bottom: 12px;
+  }
+  .detail-block { margin-bottom: 12px; }
+  .detail-block h3 { margin: 0 0 6px; font-size: 12px; color: var(--muted); font-weight: 600; }
+  #origin-bar {
+    display: flex; height: 14px; border-radius: 7px; overflow: hidden;
+    border: 1px solid var(--line); margin-bottom: 8px;
+  }
+  #origin-bar div { height: 100%; }
+  .origin-labels { display: flex; flex-direction: column; gap: 3px; font-size: 12px; }
+  .origin-labels span { display: flex; align-items: center; gap: 6px; }
+  .origin-labels i { width: 9px; height: 9px; border-radius: 2px; display: inline-block; }
+  .origin-labels b { font-weight: 600; }
+  .path {
+    border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-bottom: 8px;
+    background: rgba(255,255,255,0.03);
+  }
+  .path-head { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+  .path-head i { width: 9px; height: 9px; border-radius: 2px; flex: none; }
+  .path-share { margin-left: auto; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .path-process { font-size: 11px; color: var(--muted); margin: 3px 0; }
+  .path-reaction {
+    font-size: 11.5px; line-height: 1.5; color: #e2e8f0;
+    background: rgba(0,0,0,0.28); border-radius: 5px; padding: 4px 7px;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+  }
+  .path.sim-openable { cursor: pointer; }
+  .path.sim-openable:hover { border-color: var(--accent); }
+  .sim-btn {
+    margin-top: 7px; font-size: 11px; color: var(--accent);
+    background: rgba(96,165,250,0.12); border: 1px solid rgba(96,165,250,0.4);
+    border-radius: 6px; padding: 3px 10px; cursor: pointer;
+  }
+  .sim-btn:hover { background: rgba(96,165,250,0.24); }
+  #abundance-track { height: 8px; border-radius: 4px; background: rgba(255,255,255,0.08); overflow: hidden; margin: 4px 0 6px; }
+  #abundance-fill { height: 100%; background: linear-gradient(90deg, #38bdf8, #818cf8); border-radius: 4px; }
+  #abundance-text, #narrative { font-size: 12px; line-height: 1.6; color: #cbd5e1; }
+  #narrative { border-top: 1px dashed var(--line); padding-top: 10px; margin-top: 12px; }
+  #detail-meta { font-size: 11px; color: var(--muted); margin-top: 10px; }
+
+  footer {
+    padding: 12px 22px 26px; color: #64748b; font-size: 11px; line-height: 1.7;
+    border-top: 1px solid var(--line);
+  }
+  a { color: var(--accent); }
+
+  /* ---- simulation modal ---- */
+  #sim-modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; }
+  #sim-modal[hidden] { display: none; }
+  .sim-backdrop { position: absolute; inset: 0; background: rgba(2,6,17,0.82); backdrop-filter: blur(3px); }
+  .sim-box {
+    position: relative; width: min(840px, 94vw);
+    background: #101a2e; border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 18px 14px; box-shadow: 0 20px 60px rgba(0,0,0,0.65);
+  }
+  .sim-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .sim-title { font-size: 15px; font-weight: 600; }
+  #sim-close-btn { background: none; border: none; color: var(--muted); font-size: 18px; cursor: pointer; }
+  .sim-reaction { font-size: 12px; color: var(--muted); margin-bottom: 8px; line-height: 1.5; }
+  .sim-legend {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    font-size: 11px; color: var(--muted); margin: 6px 0 8px;
+  }
+  .sim-legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .sim-legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .sim-legend i.nu { width: 16px; height: 0; border-top: 2.5px dashed #818cf8; border-radius: 0; }
+  .sim-legend i.ph { width: 8px; height: 8px; transform: rotate(45deg); background: #fbbf24; }
+  .sim-annotate {
+    margin-left: auto; font-size: 11px; color: var(--muted);
+    background: var(--panel); border: 1px solid var(--line); border-radius: 999px;
+    padding: 3px 10px; cursor: pointer;
+  }
+  .sim-annotate.on { color: var(--accent); background: rgba(96,165,250,0.16); border-color: rgba(96,165,250,0.5); }
+  #sim-canvas { width: 100%; height: auto; background: #0b1220; border: 1px solid var(--line); border-radius: 10px; display: block; }
+  #sim-caption { text-align: center; font-size: 13px; margin: 8px 0 4px; min-height: 18px; color: #e2e8f0; }
+  #sim-stages { display: flex; justify-content: center; gap: 6px; margin: 4px 0 8px; }
+  #sim-stages i { width: 8px; height: 8px; border-radius: 50%; background: rgba(148,163,184,0.25); }
+  #sim-stages i.on { background: var(--accent); }
+  #sim-stages i.done { background: #38bdf8; }
+  .sim-controls { display: flex; align-items: center; gap: 10px; }
+  .sim-controls button, .sim-controls select {
+    background: var(--panel); color: var(--text); border: 1px solid var(--line);
+    border-radius: 6px; padding: 5px 12px; font-size: 12px; cursor: pointer;
+  }
+  .sim-controls button:disabled { opacity: 0.4; cursor: default; }
+  #sim-note { margin-left: auto; font-size: 10px; color: var(--muted); }
+
+  @media (max-width: 1100px) {
+    main { grid-template-columns: 1fr; }
+    #detail { position: static; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>元素起源 · 宇宙元素生成示意图</h1>
+  <p class="subtitle">118 种元素 × 7 类核合成过程 × 138 亿年时间线</p>
+  <p class="source">
+    来源分类：Jennifer Johnson（俄亥俄州立大学）《Origin of the Elements in the Solar System》，
+    数据经 CMG Lee 的 SVG 解析（<a href="https://github.com/sitrucp/periodic_elements" target="_blank">sitrucp/periodic_elements</a>）；
+    丰度数据：Lodders et al. (2009)，经 <a href="https://github.com/NuGrid/iniabu" target="_blank">iniabu/NuGrid</a> 获取。
+    时间线中的年代为科普示意，非精确值。
+  </p>
+</header>
+
+<div id="timeline-panel">
+  <div id="time-display">
+    <span id="era-label">大爆炸 · 宇宙诞生</span>
+    <span id="time-value">138 亿年前</span>
+    <span id="lit-counter">已点亮 0 / 118</span>
+  </div>
+  <div id="timeline-bar"></div>
+  <div id="controls">
+    <button id="btn-play" aria-label="播放/暂停">▶ 播放</button>
+    <input id="slider" type="range" min="0" max="1000" value="0" aria-label="时间线">
+    <select id="speed" aria-label="播放速度">
+      <option value="1">1×</option>
+      <option value="2" selected>2×</option>
+      <option value="4">4×</option>
+      <option value="8">8×</option>
+    </select>
+    <button id="btn-reset">重置</button>
+  </div>
+</div>
+
+<main>
+  <section id="table-wrap">
+    <div id="legend"></div>
+    <div id="periodic-table"></div>
+    <p class="hint">拖动时间线：元素在各自诞生时代被点亮，颜色代表主导来源。点击格子查看详情，点击图例可筛选。</p>
+  </section>
+  <aside id="detail">
+    <div id="detail-empty">点击任意元素<br>查看它的起源故事</div>
+    <div id="detail-body" hidden></div>
+  </aside>
+</main>
+
+<footer>
+  说明：颜色表示该元素在太阳系中的<b>主导</b>来源；格子里的小色块分布（详情面板）给出各来源占比。
+  分类比例基于 Johnson (2017) 表，个别元素（如锂、碳、铁）的来源占比在不同文献中仍有讨论。
+  时间线年代为示意：大爆炸 138 亿年前 → 第一批恒星约 136 亿年前 → 中子星并合约 130 亿年前 →
+  AGB 星 s-过程约 125 亿年前 → Ia 型超新星约 120 亿年前 → 太阳系形成 46 亿年前 → 实验室合成（20 世纪）。
+  参考：J. Johnson, “Origin of the Elements in the Solar System”, Ohio State Univ.;
+  Lodders, Palme & Gail (2009); Arcones & Thielemann, “Origin of the elements” (2023)。
+</footer>
+
+<div id="sim-modal" hidden>
+  <div class="sim-backdrop" id="sim-close"></div>
+  <div class="sim-box">
+    <div class="sim-head">
+      <div class="sim-title" id="sim-title"></div>
+      <button id="sim-close-btn" aria-label="关闭">✕</button>
+    </div>
+    <div class="sim-reaction" id="sim-reaction"></div>
+    <div class="sim-legend">
+      <span><i style="background:#f87171"></i>质子 p⁺</span>
+      <span><i style="background:#94a3b8"></i>中子 n</span>
+      <span><i style="background:#fde047"></i>电子 e⁻</span>
+      <span><i class="nu"></i>中微子 ν</span>
+      <span><i class="ph"></i>光子 γ</span>
+      <span><i style="background:#e879f9"></i>α 粒子</span>
+      <button id="sim-annotate" class="sim-annotate on" type="button">核子标注</button>
+    </div>
+    <canvas id="sim-canvas"></canvas>
+    <div id="sim-caption"></div>
+    <div id="sim-stages"></div>
+    <div class="sim-controls">
+      <button id="sim-play">❚❚ 暂停</button>
+      <button id="sim-restart">↺ 重播</button>
+      <button id="sim-skip" disabled title="壳层阶段可直接跳过，跳到动画结尾">跳过壳层</button>
+      <select id="sim-speed" aria-label="动画速度">
+        <option value="0.5">0.5×</option>
+        <option value="1" selected>1×</option>
+        <option value="2">2×</option>
+      </select>
+      <span id="sim-note">粒子颜色标准见上方图例 · 动画为示意，核子数按常见同位素绘制</span>
+    </div>
+  </div>
+</div>
+
+<script src="elements_data.js"></script>
+<script src="simulator.js"></script>
+<script>
+(function () {
+  "use strict";
+  const D = window.ELEMENTS_DATA;
+  const CATS = D.categories;
+  const ELEMS = D.elements;
+  Sim.init(ELEMS);
+
+  /* ---------------- timeline anchors (示意年代) ---------------- */
+  const ANCHORS = [
+    { t: 0.00, gya: 13.8, label: "大爆炸",   sub: "BBN · H/He/Li" },
+    { t: 0.08, gya: 13.6, label: "第一批恒星", sub: "大质量恒星核合成" },
+    { t: 0.20, gya: 13.0, label: "中子星并合", sub: "r-过程重元素" },
+    { t: 0.32, gya: 12.5, label: "AGB 星死亡", sub: "s-过程" },
+    { t: 0.45, gya: 12.0, label: "Ia 型超新星", sub: "白矮星爆发 · 铁族" },
+    { t: 0.70, gya: 4.6,  label: "太阳系形成", sub: "元素原料齐备" },
+    { t: 0.92, gya: 8.6e-8, label: "实验室合成", sub: "1940 年至今" },
+    { t: 1.00, gya: 0,    label: "今天",       sub: "" },
+  ];
+
+  function gyaFromT(t) {
+    for (let i = 1; i < ANCHORS.length; i++) {
+      if (t <= ANCHORS[i].t) {
+        const a0 = ANCHORS[i - 1], a1 = ANCHORS[i];
+        const f = (t - a0.t) / (a1.t - a0.t);
+        return a0.gya + f * (a1.gya - a0.gya);
+      }
+    }
+    return 0;
+  }
+  function tFromGya(gya) {
+    if (gya >= ANCHORS[0].gya) return 0;
+    for (let i = 1; i < ANCHORS.length; i++) {
+      if (gya >= ANCHORS[i].gya) {
+        const a0 = ANCHORS[i - 1], a1 = ANCHORS[i];
+        const f = (gya - a0.gya) / (a1.gya - a0.gya);
+        return a0.t + f * (a1.t - a0.t);
+      }
+    }
+    return 1;
+  }
+  function fmtGya(gya) {
+    const years = gya * 1e9;
+    if (years >= 1e8) return (years / 1e8).toFixed(1) + " 亿年前";
+    if (years >= 1e5) return Math.round(years / 1e4) + " 万年前";
+    if (years >= 1000) return Math.round(years / 1000) + " 千年前";
+    return "公元 " + (2026 - Math.round(years));
+  }
+
+  /* ---------------- build periodic table ---------------- */
+  const table = document.getElementById("periodic-table");
+  const byZ = {};
+  ELEMS.forEach(function (el) {
+    byZ[el.z] = el;
+    const cell = document.createElement("div");
+    cell.className = "cell";
+    cell.dataset.z = el.z;
+    cell.style.setProperty("--cell-color", CATS[el.dominant].color);
+    cell.style.gridColumn = (el.col + 1);
+    cell.style.gridRow = el.row;
+    cell.title = el.z + " " + el.cn + " " + el.symbol + " · " + CATS[el.dominant].name;
+    cell.innerHTML =
+      '<div class="num">' + el.z + '</div>' +
+      '<div class="sym">' + el.symbol + '</div>' +
+      '<div class="cnn">' + el.cn + '</div>';
+    cell.tabIndex = 0;
+    cell.addEventListener("click", function () { selectElement(el.z); });
+    cell.addEventListener("keydown", function (ev) {
+      if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); selectElement(el.z); }
+    });
+    table.appendChild(cell);
+  });
+  ["1","2","3","4","5","6","7"].forEach(function (p) {
+    const lab = document.createElement("div");
+    lab.className = "row-label";
+    lab.style.gridColumn = 1; lab.style.gridRow = p;
+    lab.textContent = p;
+    table.appendChild(lab);
+  });
+  [["镧系 57–71", 9], ["锕系 89–103", 10]].forEach(function (pair) {
+    const lab = document.createElement("div");
+    lab.className = "row-label";
+    lab.style.gridColumn = 1; lab.style.gridRow = pair[1];
+    lab.textContent = pair[0];
+    table.appendChild(lab);
+  });
+
+  /* ---------------- legend ---------------- */
+  const legend = document.getElementById("legend");
+  let filterCode = null;
+  Object.keys(CATS).forEach(function (code) {
+    const count = ELEMS.filter(function (e) { return e.dominant === code; }).length;
+    const chip = document.createElement("div");
+    chip.className = "chip";
+    chip.dataset.code = code;
+    chip.title = CATS[code].en;
+    chip.innerHTML = '<span class="swatch" style="background:' + CATS[code].color + '"></span>' +
+      CATS[code].name + ' <span class="count">' + count + "</span>";
+    chip.addEventListener("click", function () {
+      filterCode = (filterCode === code) ? null : code;
+      document.querySelectorAll(".chip").forEach(function (c) {
+        c.classList.toggle("active", c.dataset.code === filterCode);
+      });
+      applyFilter();
+    });
+    legend.appendChild(chip);
+  });
+  function applyFilter() {
+    document.querySelectorAll(".cell").forEach(function (c) {
+      const el = byZ[+c.dataset.z];
+      const match = !filterCode || el.dominant === filterCode;
+      c.classList.toggle("dim", !match);
+    });
+  }
+
+  /* ---------------- timeline controls ---------------- */
+  const slider = document.getElementById("slider");
+  const playBtn = document.getElementById("btn-play");
+  const speedSel = document.getElementById("speed");
+  const bar = document.getElementById("timeline-bar");
+  const playhead = document.createElement("div");
+  playhead.id = "playhead";
+  bar.appendChild(playhead);
+
+  const markers = ANCHORS.map(function (a, i) {
+    const m = document.createElement("div");
+    m.className = "marker" + (i === 0 ? " edge-left" : (i === ANCHORS.length - 1 ? " edge-right" : ""));
+    m.style.left = (a.t * 100) + "%";
+    m.innerHTML = '<span class="dot"></span><span><b>' + a.label + "</b>" + a.sub + "</span>";
+    bar.appendChild(m);
+    return m;
+  });
+
+  let t = 0, playing = false, rafId = null;
+  const eraLabel = document.getElementById("era-label");
+  const timeValue = document.getElementById("time-value");
+  const litCounter = document.getElementById("lit-counter");
+
+  function currentEra() {
+    let era = ANCHORS[0];
+    for (const a of ANCHORS) { if (t >= a.t) era = a; }
+    return era;
+  }
+  function render() {
+    const gya = gyaFromT(t);
+    slider.value = Math.round(t * 1000);
+    playhead.style.left = (t * 100) + "%";
+    const era = currentEra();
+    eraLabel.textContent = era.label + (era.sub ? " · " + era.sub : "");
+    timeValue.textContent = fmtGya(gya);
+    markers.forEach(function (m, i) {
+      m.classList.toggle("passed", t >= ANCHORS[i].t);
+    });
+    let lit = 0;
+    document.querySelectorAll(".cell").forEach(function (c) {
+      const el = byZ[+c.dataset.z];
+      const on = t >= tFromGya(el.epochGya);
+      c.classList.toggle("lit", on);
+      if (on) lit++;
+    });
+    litCounter.textContent = "已点亮 " + lit + " / 118";
+  }
+  slider.addEventListener("input", function () {
+    t = (+slider.value) / 1000;
+    render();
+  });
+  function tick() {
+    const speed = +speedSel.value;
+    t += (1 / 600) * speed;   // 1× = 全程约 10 秒
+    if (t >= 1) { t = 1; stop(); }
+    render();
+    if (playing) rafId = requestAnimationFrame(tick);
+  }
+  function play() { if (!playing) { playing = true; playBtn.textContent = "❚❚ 暂停"; rafId = requestAnimationFrame(tick); } }
+  function stop() { playing = false; playBtn.textContent = "▶ 播放"; if (rafId) cancelAnimationFrame(rafId); }
+  playBtn.addEventListener("click", function () { playing ? stop() : play(); });
+  document.getElementById("btn-reset").addEventListener("click", function () {
+    stop(); t = 0; render();
+  });
+
+  /* ---------------- detail panel ---------------- */
+  const detailEmpty = document.getElementById("detail-empty");
+  const detailBody = document.getElementById("detail-body");
+  const cells = document.querySelectorAll(".cell");
+  function selectElement(z) {
+    const el = byZ[z];
+    cells.forEach(function (c) { c.classList.toggle("selected", +c.dataset.z === z); });
+    detailEmpty.hidden = true;
+    detailBody.hidden = false;
+
+    const dom = CATS[el.dominant];
+    const domPct = el.sources.find(function (s) { return s.code === el.dominant; });
+    const others = el.sources.filter(function (s) { return s.code !== el.dominant; });
+    let narrative = el.narrative;
+    if (!narrative) {
+      narrative = "该元素在太阳系中主要由「" + dom.name + "」产生（约 " +
+        Math.round(domPct.percent * 100) + "%）。" + dom.desc;
+      if (others.length) {
+        narrative += " 其余来自：" + others.map(function (o) {
+          return "「" + CATS[o.code].name + "」（约 " + Math.round(o.percent * 100) + "%）";
+        }).join("、") + "。";
+      }
+    }
+
+    const bar = document.createElement("div");
+    bar.id = "origin-bar";
+    const labels = document.createElement("div");
+    labels.className = "origin-labels";
+    el.sources.forEach(function (s) {
+      const seg = document.createElement("div");
+      seg.style.width = (s.percent * 100) + "%";
+      seg.style.background = CATS[s.code].color;
+      bar.appendChild(seg);
+      const row = document.createElement("span");
+      row.innerHTML = '<i style="background:' + CATS[s.code].color + '"></i>' +
+        CATS[s.code].name + '：<b>' + Math.round(s.percent * 100) + "%</b>";
+      labels.appendChild(row);
+    });
+
+    const pathsHtml = el.paths.map(function (p) {
+      const cat = CATS[p.code];
+      return '<div class="path sim-openable" data-z="' + el.z + '" data-path="' + el.paths.indexOf(p) + '">' +
+        '<div class="path-head"><i style="background:' + cat.color + '"></i><b>' + p.site + '</b>' +
+        '<span class="path-share">' + Math.round(p.share * 100) + '%</span></div>' +
+        '<div class="path-process">' + p.process + '</div>' +
+        '<div class="path-reaction">' + p.reaction + '</div>' +
+        '<button class="sim-btn" type="button">▶ 动画模拟</button>' +
+        "</div>";
+    }).join("");
+
+    let abundanceHtml;
+    if (el.abundance !== null) {
+      const w = Math.max(2, Math.min(100, (el.abundance + 1) / 14 * 100));
+      abundanceHtml =
+        '<div id="abundance-track"><div id="abundance-fill" style="width:' + w + '%"></div></div>' +
+        '<div id="abundance-text">太阳系丰度 log ε ≈ ' + el.abundance.toFixed(2) + "（以氢 = 12 为基准）</div>";
+    } else {
+      const synthetic = el.z === 43 || el.z === 61 || el.z >= 93;
+      abundanceHtml = '<div id="abundance-text">' +
+        (synthetic ? "无稳定同位素，天然太阳系丰度 ≈ 0（实验室合成）" : "放射性元素，天然存在但丰度极低（衰变链产物）") +
+        "</div>";
+    }
+
+    let meta = "";
+    if (el.discoverer === "Prehistoric") {
+      meta = "古代已知（史前）";
+    } else if (el.discoverer) {
+      const year = el.year ? "（" + el.year + "）" : "";
+      meta = "发现：" + el.discoverer.replace(/\s+/g, " ") + year;
+    } else if (el.year) {
+      meta = "首次合成：" + el.year;
+    }
+
+    detailBody.innerHTML =
+      '<div class="detail-head">' +
+        '<div class="detail-num">' + el.z + '</div>' +
+        '<div class="detail-symbol" style="color:' + dom.color + '">' + el.symbol + '</div>' +
+        '<div class="detail-names"><span class="cn">' + el.cn + '</span>' +
+        '<span class="en">' + el.en.trim() + '</span></div>' +
+      '</div>' +
+      '<div class="detail-epoch" style="--dot-color:' + dom.color + '">' + dom.epochText + "</div>" +
+      '<div class="detail-block"><h3>生成路径' + (el.paths.length > 1 ? "（" + el.paths.length + " 条）" : "") + "</h3>" + pathsHtml + "</div>" +
+      '<div class="detail-block"><h3>来源构成</h3></div>' +
+      '<div class="detail-block" id="origin-wrap"></div>' +
+      '<div class="detail-block"><h3>宇宙丰度</h3>' + abundanceHtml + "</div>" +
+      '<div id="narrative">' + narrative + "</div>" +
+      (meta ? '<div id="detail-meta">' + meta + "</div>" : "");
+    document.getElementById("origin-wrap").appendChild(bar);
+    document.getElementById("origin-wrap").appendChild(labels);
+  }
+
+  /* ---------------- path animation modal ---------------- */
+  let simPlayer = null;
+  function openSim(z, pathIdx) {
+    const el = byZ[z];
+    const p = el.paths[pathIdx];
+    const scene = Sim.buildScene(p.recipe);
+    const modal = document.getElementById("sim-modal");
+    modal.hidden = false;
+    document.getElementById("sim-title").textContent = el.cn + "（" + el.symbol + "）· " + p.site + " · " + p.process;
+    document.getElementById("sim-reaction").textContent =
+      "反应路径：" + p.reaction + "　｜　占太阳系来源约 " + Math.round(p.share * 100) + "%";
+    const canvas = document.getElementById("sim-canvas");
+    const captionEl = document.getElementById("sim-caption");
+    const stagesEl = document.getElementById("sim-stages");
+    stagesEl.innerHTML = "";
+    for (let i = 0; i < scene.stages.length; i++) stagesEl.appendChild(document.createElement("i"));
+    const playBtn = document.getElementById("sim-play");
+    const simSkip = document.getElementById("sim-skip");
+    simSkip.disabled = true;
+    if (simPlayer) simPlayer.destroy();
+    simPlayer = Sim.createPlayer(canvas, scene, {
+      onStage: function (i, n, cap) {
+        captionEl.textContent = "第 " + (i + 1) + " / " + n + " 步　" + cap;
+        simSkip.disabled = scene.stages[i].type !== "atom";
+        Array.prototype.forEach.call(stagesEl.children, function (d, j) {
+          d.className = j < i ? "done" : (j === i ? "on" : "");
+        });
+      },
+      onUpdate: function (p, i, playingNow) {
+        playBtn.textContent = playingNow ? "❚❚ 暂停" : "▶ 播放";
+      },
+      onFinish: function () { playBtn.textContent = "↺ 重播"; simSkip.disabled = true; },
+    });
+    playBtn.onclick = function () {
+      if (simPlayer.isPlaying()) { simPlayer.pause(); playBtn.textContent = "▶ 播放"; }
+      else { playBtn.textContent = "❚❚ 暂停"; simPlayer.play(); }
+    };
+    document.getElementById("sim-restart").onclick = function () { simPlayer.restart(); };
+    document.getElementById("sim-speed").onchange = function (e) { simPlayer.setSpeed(+e.target.value); };
+    simSkip.onclick = function () { simPlayer.skipAtom(); };
+    const annotateBtn = document.getElementById("sim-annotate");
+    annotateBtn.classList.add("on");
+    simPlayer.setAnnotate(true);
+    annotateBtn.onclick = function () {
+      const on = annotateBtn.classList.toggle("on");
+      simPlayer.setAnnotate(on);
+    };
+  }
+  function closeSim() {
+    const modal = document.getElementById("sim-modal");
+    if (modal.hidden) return;
+    modal.hidden = true;
+    if (simPlayer) simPlayer.destroy();
+  }
+  document.getElementById("sim-close").addEventListener("click", closeSim);
+  document.getElementById("sim-close-btn").addEventListener("click", closeSim);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeSim(); });
+  document.getElementById("detail-body").addEventListener("click", function (e) {
+    const card = e.target.closest(".sim-openable");
+    if (!card) return;
+    openSim(+card.dataset.z, +card.dataset.path);
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
