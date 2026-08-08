@@ -22,6 +22,17 @@
 - 文档目录：[`docs/elements/`](docs/elements/README.md)
 - 生成脚本：[`src/generate_element_docs.py`](src/generate_element_docs.py)
 
+## 常见无机物文档
+
+21 种常见无机物（水、氢气、氧气、氮气、臭氧、过氧化氢、二氧化碳、一氧化碳、
+氨、盐酸、硫酸、硝酸、氢氧化钠、氢氧化钙、氯化钠、碳酸钠、碳酸氢钠、
+氧化钙、氧化铝、二氧化硅、碳酸钙）的组成方式、组成原理、元素起源关联与制取：
+
+- 文档目录：[`docs/substances/`](docs/substances/README.md)
+- 生成脚本：[`src/generate_substance_docs.py`](src/generate_substance_docs.py)
+
+> 说明：以上文档仅存放于仓库（GitHub/本地），不参与网站的交互页面。
+
 ### 本机代理（Clash Verge）说明
 
 本机已安装并配置 Clash Verge（mihomo 内核，混合端口 `127.0.0.1:7897`）。
